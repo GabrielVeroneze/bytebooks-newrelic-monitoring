@@ -1,7 +1,11 @@
-import { useNavigate } from 'react-router'
-
 const ErrorFallback = () => {
-    const navigate = useNavigate()
+    const handleReload = () => {
+        window.location.reload()
+    }
+
+    const handleBack = () => {
+        window.location.replace('/')
+    }
 
     return (
         <div className="flex-1 flex flex-col items-center justify-center mt-4">
@@ -16,7 +20,7 @@ const ErrorFallback = () => {
             />
             <button
                 className="py-3 w-1/4 bg-[#EB9B00] hover:opacity-80 rounded-md shadow-md"
-                onClick={() => navigate(0)}
+                onClick={handleReload}
             >
                 <h3 className="text-white text-lg font-medium">
                     Recarregar Página
@@ -24,7 +28,7 @@ const ErrorFallback = () => {
             </button>
             <button
                 className="py-3 w-1/4 bg-slate-500 hover:opacity-80 rounded-md shadow-md mt-2"
-                onClick={() => navigate('/')}
+                onClick={handleBack}
             >
                 <h3 className="text-white text-lg font-medium">
                     Voltar ao Inicio
