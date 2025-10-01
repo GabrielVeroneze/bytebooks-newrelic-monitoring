@@ -11,6 +11,7 @@ const AppRoutes = () => {
                 <Route index element={<Catalog />} />
                 <Route path="book/:id" element={<BookDetail />} />
                 <Route path="order" element={<Order />} />
+                <Route path="*" element={<h1>Não há nada aqui.</h1>} />
             </Route>
         </Routes>
     )
