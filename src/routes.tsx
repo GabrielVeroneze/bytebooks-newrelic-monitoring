@@ -3,6 +3,7 @@ import Layout from '@/pages/Layout'
 import Catalog from '@/pages/Catalog'
 import BookDetail from '@/pages/BookDetail'
 import Order from '@/pages/Order'
+import NotFound from '@/pages/NotFound'
 
 const AppRoutes = () => {
     return (
@@ -11,7 +12,7 @@ const AppRoutes = () => {
                 <Route index element={<Catalog />} />
                 <Route path="book/:id" element={<BookDetail />} />
                 <Route path="order" element={<Order />} />
-                <Route path="*" element={<h1>Não há nada aqui.</h1>} />
+                <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>
     )
