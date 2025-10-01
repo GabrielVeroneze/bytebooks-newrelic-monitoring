@@ -1,5 +1,7 @@
 import { StrictMode } from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 import { ContextProvider } from '@/context/provider/ContextProvider'
+import ErrorFallback from '@/components/ErrorFallback'
 import '@fontsource/poppins'
 import '@fontsource/poppins/700.css'
 import '@/styles/global.css'
@@ -11,7 +13,9 @@ interface RootProps {
 const Root = ({ children }: RootProps) => {
     return (
         <StrictMode>
-            <ContextProvider>{children}</ContextProvider>
+            <ErrorBoundary fallback={<ErrorFallback />}>
+                <ContextProvider>{children}</ContextProvider>
+            </ErrorBoundary>
         </StrictMode>
     )
 }
