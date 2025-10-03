@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BooksContext } from './BooksContext'
+import { errorLog } from '@/utils/errorLog'
 import type { BooksState } from '@/types/BooksState'
 import type { Book } from '@/types/Book'
 import sleep from 'sleep-promise'
@@ -55,6 +56,7 @@ export const BooksProvider = ({ children }: BooksProviderProps) => {
                 isLoading: false,
             }))
         } catch {
+            errorLog(new Error('Erro ao buscar os livros'))
             setState((prev) => ({
                 ...prev,
                 isLoading: false,
